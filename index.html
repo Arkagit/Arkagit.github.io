@@ -14,30 +14,30 @@
 
         :root {
             --bg-primary: #ffffff;
-            --bg-secondary: #f3f4f6;
+            --bg-secondary: #f8fafc;
             --bg-card: #ffffff;
-            --accent: #6b7280;
-            --accent-2: #4b5563;
-            --text: #111827;
-            --text-dim: #6b7280;
-            --border: rgba(107, 114, 128, 0.2);
+            --accent: #0ea5e9;
+            --accent-2: #8b5cf6;
+            --text: #1e293b;
+            --text-dim: #64748b;
+            --border: rgba(148, 163, 184, 0.2);
             --shadow: rgba(0, 0, 0, 0.1);
-            --link-color: #4b5563;
-            --link-hover: #374151;
+            --link-color: #0284c7;
+            --link-hover: #0369a1;
         }
 
         [data-theme="dark"] {
-            --bg-primary: #111111;
-            --bg-secondary: #1a1a1a;
-            --bg-card: #222222;
-            --accent: #9ca3af;
-            --accent-2: #6b7280;
-            --text: #e5e7eb;
-            --text-dim: #9ca3af;
-            --border: rgba(156, 163, 175, 0.2);
+            --bg-primary: #0a0e27;
+            --bg-secondary: #0f1629;
+            --bg-card: #1a1f3a;
+            --accent: #00d4ff;
+            --accent-2: #a78bfa;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
+            --border: rgba(0, 212, 255, 0.2);
             --shadow: rgba(0, 0, 0, 0.5);
-            --link-color: #9ca3af;
-            --link-hover: #d1d5db;
+            --link-color: #38bdf8;
+            --link-hover: #00d4ff;
         }
 
         body {
@@ -55,12 +55,8 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: #ffffff;
+            background: var(--bg-secondary);
             transition: background 0.3s ease;
-        }
-
-        [data-theme="dark"] .bg-animation {
-            background: #111111;
         }
 
         .bg-animation::before {
@@ -72,11 +68,11 @@
         }
 
         [data-theme="light"] .bg-animation::before {
-            background: radial-gradient(circle, rgba(107, 114, 128, 0.06) 0%, transparent 50%);
+            background: radial-gradient(circle, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
         }
 
         [data-theme="dark"] .bg-animation::before {
-            background: radial-gradient(circle, rgba(156, 163, 175, 0.06) 0%, transparent 50%);
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
         }
 
         @keyframes float {
@@ -89,7 +85,7 @@
             top: 0;
             width: 100%;
             backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.8);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
             padding: 1.5rem 0;
@@ -97,7 +93,7 @@
         }
 
         [data-theme="dark"] nav {
-            background: rgba(17, 17, 17, 0.85);
+            background: rgba(10, 14, 39, 0.8);
         }
 
         nav .container {
@@ -112,7 +108,10 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--text);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .nav-right {
@@ -142,14 +141,13 @@
         .theme-toggle-slider {
             width: 22px;
             height: 22px;
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
             border-radius: 50%;
             transition: transform 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 12px;
-            color: #ffffff;
         }
 
         [data-theme="dark"] .theme-toggle-slider {
@@ -157,14 +155,11 @@
         }
 
         .theme-toggle-slider::before {
-            content: '⊙';
-            font-size: 14px;
-            font-weight: 700;
+            content: '☀️';
         }
 
         [data-theme="dark"] .theme-toggle-slider::before {
-            content: '●';
-            font-size: 14px;
+            content: '🌙';
         }
 
         .nav-links {
@@ -229,7 +224,10 @@
             font-weight: 800;
             margin-bottom: 2rem;
             line-height: 1.1;
-            color: var(--text);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .home-text p {
@@ -276,7 +274,7 @@
             aspect-ratio: 1;
             border-radius: 20px;
             object-fit: cover;
-            background: var(--bg-secondary);
+            background: linear-gradient(135deg, #667eea, #764ba2);
         }
 
         .section-header {
@@ -288,7 +286,10 @@
             font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            color: var(--text);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-header p {
@@ -319,7 +320,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: var(--accent);
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
             transform: scaleX(0);
             transition: transform 0.3s;
         }
@@ -369,7 +370,7 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: var(--accent);
+            background: linear-gradient(180deg, var(--accent), var(--accent-2));
             transform: scaleY(0);
             transition: transform 0.3s;
         }
@@ -419,7 +420,7 @@
 
         .links a {
             padding: 0.5rem 1.5rem;
-            background: rgba(107, 114, 128, 0.1);
+            background: rgba(14, 165, 233, 0.1);
             border: 1px solid var(--border);
             border-radius: 50px;
             color: var(--link-color);
@@ -437,7 +438,7 @@
         }
 
         [data-theme="dark"] .links a {
-            background: rgba(156, 163, 175, 0.1);
+            background: rgba(0, 212, 255, 0.1);
         }
 
         [data-theme="dark"] .links a:hover {
@@ -481,7 +482,10 @@
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 2rem;
-            color: var(--text);
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .contact-grid {
@@ -617,7 +621,7 @@
             }
 
             [data-theme="dark"] .nav-links {
-                background: rgba(17, 17, 17, 0.98);
+                background: rgba(10, 14, 39, 0.98);
             }
 
             .nav-links.active {
@@ -757,7 +761,8 @@
         <div class="container">
             <div class="home-content">
                 <div class="home-text">
-                    <p>Welcome. I am a post-doctoral researcher with <a href="https://eecs.iisc.ac.in/people/anant-raj/" target="_blank">Prof. Anant Raj</a> in the <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation</a> at <a href="https://iisc.ac.in/" target="_blank">the Indian Institute of Science (IISc), Bengaluru</a>. I completed my doctoral degree from the <a href="https://www.iitk.ac.in/math/" target="_blank">Department of Mathematics and Statistics</a> at <a href="https://www.iitk.ac.in/" target="_blank">the Indian Institute of Technology (IIT), Kanpur</a> under the supervision of <a href="https://dvats.github.io/" target="_blank">Prof. Dootika Vats</a>. Prior to joining IIT, I was a senior associate analyst at <a href="https://www.infosys.com/" target="_blank">Infosys Limited</a>. My primary area of research is in Markov chain Monte Carlo and output analysis. More details are in my <a href="https://drive.google.com/file/d/1S4SYnYJkHlxlunKDlQGhPaoTHHfK4zV2/view" target="_blank">CV</a>.</p>
+                    <!-- <h1>Research Scholar</h1> -->
+                    <p>Welcome. I am a post-doctoral researcher with <a href = "https://eecs.iisc.ac.in/people/anant-raj/" target="_blank">Prof. Anant Raj</a> in the <a href="https://www.csa.iisc.ac.in/" target="_blank">Department of Computer Science and Automation</a> at <a href="https://iisc.ac.in/" target="_blank">the Indian Institute of Science (IISc), Bengaluru</a>. I completed my doctoral degree from the <a href="https://www.iitk.ac.in/math/" target="_blank">Department of Mathematics and Statistics</a> at <a href="https://www.iitk.ac.in/" target="_blank">the Indian Institute of Technology (IIT), Kanpur</a> under the supervision of <a href="https://dvats.github.io/" target="_blank">Prof. Dootika Vats</a>. Prior to joining IIT, I was a senior associate analyst at <a href="https://www.infosys.com/" target="_blank">Infosys Limited</a>. My primary area of research is in Markov chain Monte Carlo and output analysis. More details are in my <a href="https://drive.google.com/file/d/1S4SYnYJkHlxlunKDlQGhPaoTHHfK4zV2/view" target="_blank">CV</a>.</p>
                     <p>Previously, I was a visiting student researcher with the <a href="https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/fulbright-nehru-doctoral-research-fellowships/" target="_blank">Fulbright Nehru doctoral research fellowship</a> at the <a href="https://cla.umn.edu/statistics" target="_blank">School of Statistics, University of Minnesota Twin Cities</a>, under the supervision of <a href="https://galinj.github.io/" target="_blank">Prof. Galin L. Jones</a>.</p>
                 </div>
                 <div class="home-image">
@@ -924,4 +929,4 @@
         });
     </script>
 </body>
-</html>
+</html> 
